@@ -1,0 +1,97 @@
+Machine Assembly Final Notes:
+
+
+Ch. 6  - Floating Point:
+
+IEEE 754 - Single Precision Floating Point
+Float datatype i.e. 32-bit "encoded value"
+Like a binary scientific notation.
+
+
+
+Regular Decimal Quantity:
+
+123.256   convert to Normalized Scientific Notation:
+
+Move decimal to left 2 positions:
+
+1.23256
+
+Multiply by 10
+
+1.23256 x 10^2
+
+
+
+Now, we have a fractional value to begin with:
+
+0.00789
+
+Move decimal to right 3 positions
+
+7.89x10^-3
+
+
+
+
+Binary Fractional Values:
+
+Convert 0.75 (base 10) to binary:
+
+Use repeated multiplication
+
+0.75 x 2 = 1.5    1 is MSB   5 repeatedly fractional part by 2
+
+0.5 x 2 = 1.0    1 is LSB    0 STOP when fractional part == 0
+
+So 0.75   is   0.11 (base 2)
+
+
+
+
+Example 2:
+
+0.875   to   binary
+
+0.875 x 2 = 1.75    1 is the MSB
+
+0.75 x 2 = 1.5
+
+0.5 x 2 = 1.0      1 is the LSB
+
+
+0.875 (base 10)  = 0.111 (base 2)
+
+
+
+
+
+
+
+FP32 Encoding
+
+bit 31  is the S field
+
+* S: Sign Field
+
+S = 0  is positive
+S = 1  is negative
+
+
+
+30 to 23   is the E field
+
+E: Biased Exponent Field
+
+* E = bias + P
+bias = 127
+p = unbiased exponent
+
+
+
+22 to 0   is the F field
+
+* F: Fraction (Also called Mantissa or Significand)
+
+All bits to the right of radix point of the normalized
+binary quantity.
